@@ -55,4 +55,11 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
   root :to =>'home#index'
+  
+   
+   devise_scope :volunteer do
+     get "register", to: "devise/registrations#new", as: :register
+     get "login", to: "devise/sessions#new", as: :login
+     get "logout", to: "devise/sessions#destroy", as: :logout
+   end
 end
