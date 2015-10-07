@@ -44,5 +44,7 @@ group :development, :test do
   
   # gem 'mysql2'
   gem 'devise'
+  
+  gem 'bootstrap-sass'
 end
 
