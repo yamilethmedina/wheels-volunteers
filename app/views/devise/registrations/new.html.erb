@@ -1,0 +1,90 @@
+<h2>Sign up</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true %>
+  </div>
+  
+  
+  <div class="field">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :firstname, 'First Name' %><br />
+    <%= f.text_field :firstname, autofocus: true %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :lastname, 'Last Name' %><br />
+    <%= f.text_field :lastname, autofocus: true %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :phone, 'Phone Number' %><br />
+    <%= f.text_field :phone, autofocus: true %>
+  </div>
+  
+  
+<h1>How would you like to help out with WHEELS 2015?</h1>
+    <div class="field">
+    <%= f.label :greenway, 'Working on the pop-up Neighborhood Greenway on 58th Ave.' %><br />
+    <%= f.check_box :greenway %>
+  </div>
+  
+   <div class="field">
+    <%= f.label :mentoring, 'Mentoring at the Street Bash (Saturday, November 14th)' %><br />
+    <%= f.check_box :mentoring %>
+  </div>
+  
+   <div class="field">
+    <%= f.label :essay, 'Writing a 500-word essay about your experience commuting' %><br />
+    <%= f.check_box :essay %>
+  </div>
+  
+   <div class="field">
+    <%= f.label :streetbash, 'Serving as an on-call volunteer for assorted tasks during the Street Bash (Saturday, November 14th)' %><br />
+    <%= f.check_box :streetbash %>
+  </div>
+  
+   <div class="field">
+    <%= f.label :us1crossing, 'Helping others cross US-1 (South Dixie Highway) during WHEELS events' %><br />
+    <%= f.check_box :us1crossing %>
+  </div>
+  
+   <div class="field">
+    <%= f.label :conference, 'Volunteering during the WHEELS conference (Friday, November 13th and Saturday, November 14th)' %><br />
+    <%= f.check_box :conference %>
+  </div>
+  
+   <div class="field">
+    <%= f.label :bikevalet, 'Working with the Green Mobility Network bike valet during the Street Bash (Saturday, November 14th)' %><br />
+    <%= f.check_box :bikevalet %>
+  </div>
+  
+   <div class="field">
+    <%= f.label :other %><br />
+    <%= f.check_box :other %>
+  
+    <%= f.label :otherexplain, 'Please explain' %>
+    <%= f.text_field :otherexplain %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
