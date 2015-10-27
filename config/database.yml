@@ -29,26 +29,26 @@
 #   database: db/production.sqlite3
 development:
   adapter: postgresql
-  encoding: utf8
-  database: project_development
+  encoding: SQL_ASCII
+  database: volunteers
   pool: 5
-  username: 
+  username: ubuntu
   password:
 
 test: &TEST
   adapter: postgresql
-  encoding: utf8
-  database: project_test
+  encoding: SQL_ASCII
+  database: volunteers
   pool: 5
-  username: 
+  username: ubuntu
   password:
 
 production:
   adapter: postgresql
-  encoding: utf8
-  database: project_production
+  encoding: SQL_ASCII
+  database: volunteers
   pool: 5
-  username: 
+  username: ubuntu
   password:
 
 cucumber:

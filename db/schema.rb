@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20151007192708) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "volunteers", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -40,7 +43,7 @@ ActiveRecord::Schema.define(version: 20151007192708) do
     t.string   "otherexplain"
   end
 
-  add_index "volunteers", ["email"], name: "index_volunteers_on_email", unique: true
-  add_index "volunteers", ["reset_password_token"], name: "index_volunteers_on_reset_password_token", unique: true
+  add_index "volunteers", ["email"], name: "index_volunteers_on_email", unique: true, using: :btree
+  add_index "volunteers", ["reset_password_token"], name: "index_volunteers_on_reset_password_token", unique: true, using: :btree
 
 end
